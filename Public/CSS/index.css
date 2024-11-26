@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh;
+}
+
+/* Container for the content */
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the content */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Space for the sticky navbar */
+}
+
+.post-container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin: 20px 0; /* Add some space around the posts */
+}
+
+.post {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.post:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.post h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.post img:hover {
+    transform: scale(1.05);
+}
+
+/* Visual effects for alternating post backgrounds */
+.post:nth-child(odd) {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+}
+
+.post:nth-child(even) {
+    background: linear-gradient(145deg, #ffffff, #f2f2f2);
+}
+
+/* Title underline effect */
+.post h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    margin-top: 5px;
+}
+
+.post h2:hover {
+    color: #0056b3;
+    cursor: pointer;
+}
+
+/* Responsive Design for screens smaller than 768px */
+@media (max-width: 768px) {
+    .post-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .post h2 {
+        font-size: 20px; /* Adjust font size for better readability */
+    }
+
+    .post p {
+        font-size: 14px; /* Slightly smaller text */
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .post-container {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .post h2 {
+        font-size: 18px;
+    }
+
+    .post p {
+        font-size: 12px;
+    }
+}
